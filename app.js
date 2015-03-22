@@ -23,12 +23,13 @@ var text = fs.readFileSync(inputCsv, 'utf-8');
 // 		callback(result);
 // 	});
 // };
-// var rows = new CSV(text, { header: true, cast: false }).parse();
 // MongoClient.connect(url, function(err, db) {
 // 	if (err) return console.error(err);
-
+//
+// 	var rows = new CSV(text, { header: true, cast: false }).parse();
+//
 // 	console.log('Connected correctly to server');
-
+//
 // 	insertDocuments(db, rows, function(result) {
 // 		console.log('Insert Finish! result is ', result);
 // 		db.close();
@@ -41,6 +42,8 @@ var text = fs.readFileSync(inputCsv, 'utf-8');
  */
 var c = 0;
 MongoClient.connect(url, function(err, db) {
+	if (err) return console.error(err);
+
 	var col = db.collection(NAME_MONGO_COLLECTION);
 	var batch = col.initializeUnorderedBulkOp({ useLegacyOps: true });
 
