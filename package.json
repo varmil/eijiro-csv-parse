@@ -14,6 +14,7 @@
     "fast-csv": "^0.6.0",
     "lodash": "^3.5.0",
     "mongodb": "^1.4.34",
+    "sqlite3": "^3.0.5",
     "stream-transform": "0.0.7"
   }
 }
