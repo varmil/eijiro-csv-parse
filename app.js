@@ -44,7 +44,8 @@ MongoClient.connect(url, function(err, db) {
 	var col = db.collection(NAME_MONGO_COLLECTION);
 	var batch = col.initializeUnorderedBulkOp({ useLegacyOps: true });
 
-	new CSV(text, { header: true, cast: false }).forEach(function(obj) {
+	// header is [ word,trans,level,memory,modify,pron ]
+	new CSV(text, { header: true, cast: ['String', 'String', 'Number', 'Number', 'Number', 'String'] }).forEach(function(obj) {
 		++c; if (c % 10000 === 0) console.log('count is ', c); // output debug log
 		batch.insert(obj);
 	});
