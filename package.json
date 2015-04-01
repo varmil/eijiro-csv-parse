@@ -9,12 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^0.9.0",
     "comma-separated-values": "^3.6.1",
     "csv": "^0.4.1",
     "fast-csv": "^0.6.0",
     "lodash": "^3.5.0",
     "mongodb": "^1.4.34",
     "sqlite3": "^3.0.5",
-    "stream-transform": "0.0.7"
+    "stream-transform": "0.0.7",
+    "unirest": "^0.4.0"
   }
 }
